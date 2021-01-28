@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void push(int [], int);
+void pop(int []);
+int Top(int [], int);
+int count(int [], int);
+int main()
+{
+    int c, top, size, n;
+    int stack[n];
+    printf("Enter the number of element of stack");
+    scanf("%d",&n);
+    printf("====Welcome to Stack Implementation======\n");
+    printf("Enter your Choice\n");
+    printf("1. Push\n");
+    printf("2. Pop\n");
+    printf("3. Top\n");
+    printf("4. Size\n");
+
+    scanf("%d", &c);
+    while(1){
+       switch(c){
+	   case 1: push(stack, n);
+           break;
+           case 2: pop(stack);
+           break;
+           case 3:top = Top(stack, n);
+           break;
+           case 4:size = count(stack, n);
+            break;
+            default:
+            printf("Wrong Input");
+            exit(0);
+       }         
+    }
+    return 0;
+}
+void push(int stack[], int n)
+{
+    int top = -1;
+    int data;
+
+    printf("Enter the Element");
+    scanf("%d",&data);
+
+    if(top == stack[n-1])// stack[n-1]
+    {
+        printf("Stack is OverFlow");
+    }
+    else
+    {
+        top = 0;
+        stack[top] = data;
+        top++;    
+        printf("Element Added");
+    }
+}  
+void pop(int stack[])
+{
+    int top = 0, element;
+    if(top == -1)
+    {
+        printf("Stack is Underflow.");
+    }
+    else 
+    {
+        element = stack[top];
+        top--;
+        printf("Element removed Succesfully");
+    }
+
+}
+int Top(int stack[], int n){
+    int top=n;
+    return top;
+    }
+int count(int stack[], int n)
+{
+    int top=n;
+    return top + 1;
+}
